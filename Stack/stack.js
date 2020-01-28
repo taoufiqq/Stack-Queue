@@ -23,26 +23,25 @@ class Stack {
     }
     res.innerHTML = this.head.data;
     }
-    // PopFromList(){
-    //   if(!this.head.prev){
-    //     this.head = null;
-    //   }else{
-    //     this.current =  this.head.prev;
-    //     this.head.next = null;
-    //   }
-      
-    // }
+
+
+
        PopFromList()
    {
-    if(!this.head){
-      res.innerHTML = "Empty Stack!!!!!";
-    }else
-    {
-      let tmp;
-      tmp = this.head;
-      this.head= this.head.prev;
-    }
-       tmp = null;
+      if (this.head && this.head === this.current) {
+            this.current = this.head.prev;
+        }
+        if (this.head && this.head.prev) {
+            this.head = this.head.prev;
+            this.head.next = null;
+        } else {
+            this.head = this.current = null;
+            res.innerHTML = "Empty Stack!!!!!";
+    
+        }
+ 
+
+       
    }
 
 
@@ -69,23 +68,23 @@ let stack = new Stack();
 
 function PushToList(){
   stack.PushToList();
-  stack.showCurrent()
+  stack.showCurrent();
 }
 
 function PopFromList(){
   stack.PopFromList();
-  stack.showCurrent()
+  stack.showCurrent();
 
 }
 
 function up(){
   stack.up();
-  stack.showCurrent()
+  stack.showCurrent();
 
 }
 
 function down(){
   stack.down();
-  stack.showCurrent()
+  stack.showCurrent();
 
 }
