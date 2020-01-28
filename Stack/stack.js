@@ -37,17 +37,15 @@ class Stack {
         } else {
             this.head = this.current = null;
             res.innerHTML = "Empty Stack!!!!!";
+            document.getElementById('inpt').value= " ";
+
     
         }
- 
-
-       
+     
    }
 
 
-
-
-    up(){
+ up(){
       if(this.current && this.current.next){
       this.current = this.current.next;
     }
